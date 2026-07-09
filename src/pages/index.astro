@@ -161,6 +161,7 @@ const whatsappLink = 'https://wa.link/zvpsjg';
 				<div class="bezel reveal delay-1 form-shell">
 					<form class="core contact-form" name="evaluacion-bcr" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
 						<input type="hidden" name="form-name" value="evaluacion-bcr" />
+						<input type="hidden" name="mensaje_resumen" />
 						<p class="netlify-honeypot" aria-hidden="true">
 							<label>
 								<span>No completar</span>
@@ -442,6 +443,34 @@ const whatsappLink = 'https://wa.link/zvpsjg';
 	if (location.hash) {
 		requestAnimationFrame(() => scrollToHash(location.hash, false));
 	}
+
+	const contactForm = document.querySelector<HTMLFormElement>('form[name="evaluacion-bcr"]');
+	const summaryInput = contactForm?.querySelector<HTMLInputElement>('input[name="mensaje_resumen"]');
+	const getFieldValue = (formData: FormData, fieldName: string, fallback = 'No indicado') => {
+		const value = formData.get(fieldName);
+
+		if (typeof value !== 'string') return fallback;
+
+		const trimmedValue = value.trim();
+		return trimmedValue || fallback;
+	};
+
+	contactForm?.addEventListener('submit', () => {
+		if (!summaryInput) return;
+
+		const formData = new FormData(contactForm);
+		const comentarios = getFieldValue(formData, 'comentarios', 'Sin comentarios adicionales');
+
+		summaryInput.value = [
+			'Hola, deseo iniciar una consulta para revisión de crédito.',
+			`Mi nombre completo es ${getFieldValue(formData, 'nombre_completo')}, mi número de cédula es ${getFieldValue(formData, 'cedula')}, mi teléfono es ${getFieldValue(formData, 'telefono')}, mi correo electrónico es ${getFieldValue(formData, 'email')} y mi dirección exacta es ${getFieldValue(formData, 'direccion_exacta')}.`,
+			`Actualmente trabajo en ${getFieldValue(formData, 'empresa')}, en el puesto de ${getFieldValue(formData, 'puesto')}, y tengo una antigüedad laboral de ${getFieldValue(formData, 'antiguedad_laboral')}.`,
+			`Deseo solicitar un monto de ${getFieldValue(formData, 'monto_solicitado')}.`,
+			`Sobre mi situación actual, indico que ${getFieldValue(formData, 'tiene_deudas')} tengo deudas actualmente y que ${getFieldValue(formData, 'esta_al_dia')} estoy al día con mis pagos.`,
+			`Comentarios adicionales: ${comentarios}.`,
+			'Quedo atento/a para recibir orientación sobre el siguiente paso.',
+		].join(' ');
+	});
 
 	const revealTargets = document.querySelectorAll('.reveal');
 	document.documentElement.classList.add('js-reveal');
