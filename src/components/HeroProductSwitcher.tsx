@@ -37,7 +37,7 @@ const products: HeroProduct[] = [
 		tabLabel: 'Credito Personal',
 		title: 'Crédito personal BCR con orientación clara desde el primer contacto',
 		subtitle:
-			'Conocé si podés calificar, qué datos necesitás y cómo iniciar tu solicitud de crédito personal simple.',
+			'Conocé si podés calificar, qué datos necesitás y cómo iniciar tu solicitud de crédito personal.',
 		primaryAction: 'Consultar ahora',
 		primaryHref: '#contacto',
 		secondaryAction: 'Ver requisitos',
@@ -46,26 +46,26 @@ const products: HeroProduct[] = [
 			'La aprobación, monto final y condiciones están sujetos al análisis crediticio, capacidad de pago, políticas del banco y normativa aplicable.',
 		board: {
 			label: 'Antes de iniciar',
-			headline: 'Una revisión clara del monto, requisitos y capacidad de pago.',
-			body: 'Referencia de cuota: ₡19.500 por mes por cada millón a 10 años.',
+			headline: 'Solicitar un crédito no tiene por qué ser complicado. Te guiamos paso a paso.',
+			body: 'Referencia de cuota: ₡19.500 por mes por cada millón a 10 años aproximadamente.',
 			items: [
-				'Hasta ₡10 millones, sujeto a capacidad de pago.',
+				'Tasas de interés sujetas a evaluación.',
 				'Abonos extraordinarios permitidos.',
-				'Respuesta inicial usualmente en 1 día hábil.',
+				'Asesoría personalizada.',
 			],
 			accentLabel: 'Canal rápido',
 			accentTitle: 'Consultar por WhatsApp',
 			accentText: 'Teléfono: 61031947. Correo: ashsevilla@bancobcr.com',
 			details: [
 				{
-					label: 'Monto',
-					title: 'Hasta ₡10M',
-					text: 'Sujeto a capacidad de pago.',
-				},
-				{
 					label: 'Plazo usual',
 					title: '2 a 3 semanas',
 					text: 'Tiempo habitual de análisis.',
+				},
+				{
+					label: 'Tasas de interés',
+					title: 'Tasa Fija',
+					text: '5 años 17.20%, 8 años 18.10%, 10 años 18.50%',
 				},
 			],
 		},
@@ -73,9 +73,9 @@ const products: HeroProduct[] = [
 	{
 		id: 'card',
 		tabLabel: 'Tarjeta de crédito',
-		title: 'Tarjeta de crédito BCR para comprar con más seguridad desde $500',
+		title: 'Tarjeta de crédito BCR para comprar con más seguridad',
 		subtitle:
-			'Disfrutá los beneficios de las tarjetas de crédito BCR con pagos digitales, compra de saldos y seguridad 3DS para compras en línea.',
+			'Disfrutá los beneficios de las tarjetas de crédito BCR con pagos digitales y seguridad 3DS para compras en línea.',
 		primaryAction: 'Enviar correo',
 		primaryHref: 'mailto:ashsevilla@bancobcr.com',
 		secondaryAction: 'Consultar ahora',
@@ -85,21 +85,20 @@ const products: HeroProduct[] = [
 		board: {
 			label: 'Tasa mensual',
 			headline: '2.71% de interés mensual.',
-			body: 'Solicitud disponible a partir de $500 en adelante, según evaluación y perfil.',
+			body: 'Condiciones sujetas a políticas vigentes del banco.',
 			items: [
 				'Autorización SUGEF requerida.',
 				'6 meses de continuidad laboral.',
 				'Billeteras electrónicas para comprar con móvil Android o iOS.',
-				'Compra de saldos de tarjetas de otros bancos.',
 			],
 			accentLabel: 'Contacto directo',
 			accentTitle: 'Consultar por WhatsApp',
 			accentText: 'Teléfono: 61031947. Correo: ashsevilla@bancobcr.com',
 			details: [
 				{
-					label: 'Monto inicial',
-					title: 'Desde $500',
-					text: 'Límite sujeto a aprobación.',
+					label: 'Límite',
+					title: 'Sujeto a capacidad de pago',
+					text: 'Consulta para conocer el tuyo.',
 				},
 				{
 					label: 'Seguridad',
