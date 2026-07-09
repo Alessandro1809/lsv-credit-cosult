@@ -159,46 +159,53 @@ const whatsappLink = 'https://wa.link/zvpsjg';
 					</div>
 				</div>
 				<div class="bezel reveal delay-1 form-shell">
-					<form class="core contact-form" action="mailto:ashsevilla@bancobcr.com" method="post" enctype="text/plain">
+					<form class="core contact-form" name="evaluacion-bcr" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+						<input type="hidden" name="form-name" value="evaluacion-bcr" />
+						<p class="netlify-honeypot" aria-hidden="true">
+							<label>
+								<span>No completar</span>
+								<input name="bot-field" tabindex="-1" autocomplete="off" />
+							</label>
+						</p>
 						<label>
 							<span>Nombre completo</span>
-							<input name="Nombre completo" autocomplete="name" required />
+							<input name="nombre_completo" autocomplete="name" required />
 						</label>
 						<label>
 							<span>Cédula</span>
-							<input name="Cédula" inputmode="numeric" required />
+							<input name="cedula" inputmode="numeric" required />
 						</label>
 						<label>
 							<span>Teléfono</span>
-							<input name="Teléfono" autocomplete="tel" inputmode="tel" required />
+							<input name="telefono" autocomplete="tel" inputmode="tel" required />
 						</label>
 						<label>
 							<span>Correo</span>
-							<input name="Correo" type="email" autocomplete="email" required />
+							<input name="email" type="email" autocomplete="email" required />
 						</label>
 						<label class="wide">
 							<span>Dirección exacta</span>
-							<input name="Dirección exacta" autocomplete="street-address" required />
+							<input name="direccion_exacta" autocomplete="street-address" required />
 						</label>
 						<label>
 							<span>Empresa donde trabaja</span>
-							<input name="Empresa donde trabaja" required />
+							<input name="empresa" required />
 						</label>
 						<label>
 							<span>Puesto</span>
-							<input name="Puesto" required />
+							<input name="puesto" required />
 						</label>
 						<label>
 							<span>Antigüedad laboral</span>
-							<input name="Antigüedad laboral" required />
+							<input name="antiguedad_laboral" required />
 						</label>
 						<label>
 							<span>Monto que desea solicitar</span>
-							<input name="Monto que desea solicitar" inputmode="numeric" required />
+							<input name="monto_solicitado" inputmode="numeric" required />
 						</label>
 						<label>
 							<span>¿Tiene deudas actualmente?</span>
-							<select name="Tiene deudas actualmente" required>
+							<select name="tiene_deudas" required>
 								<option value="">Seleccionar</option>
 								<option>Sí</option>
 								<option>No</option>
@@ -206,7 +213,7 @@ const whatsappLink = 'https://wa.link/zvpsjg';
 						</label>
 						<label>
 							<span>¿Está al día con sus pagos?</span>
-							<select name="Está al día con sus pagos" required>
+							<select name="esta_al_dia" required>
 								<option value="">Seleccionar</option>
 								<option>Sí</option>
 								<option>No</option>
@@ -215,7 +222,7 @@ const whatsappLink = 'https://wa.link/zvpsjg';
 						</label>
 						<label class="wide">
 							<span>Comentarios adicionales</span>
-							<textarea name="Comentarios adicionales" rows="4"></textarea>
+							<textarea name="comentarios" rows="4"></textarea>
 						</label>
 						<button class="button button-primary wide" type="submit">
 							<span>Enviar información</span>
@@ -1240,6 +1247,10 @@ const whatsappLink = 'https://wa.link/zvpsjg';
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 18px;
 		padding: 24px;
+	}
+
+	.netlify-honeypot {
+		display: none;
 	}
 
 	.contact-form label {
